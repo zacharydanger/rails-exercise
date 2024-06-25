@@ -266,7 +266,7 @@ describe 'News API', type: :request do
         published_at: '2020-02-11',
       }
       fail('Cannot create an article') unless response.status == 201
-      
+
       JSON.parse(response.body)
     end
 
@@ -289,7 +289,7 @@ describe 'News API', type: :request do
         published_at: '2020-02-11',
       }
       fail('Cannot create an article') unless response.status == 201
-      
+
       JSON.parse(response.body)
     end
 
