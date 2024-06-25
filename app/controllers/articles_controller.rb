@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :error_404
+
   def create
     @article = Article.new(article_params)
 
@@ -7,6 +9,12 @@ class ArticlesController < ApplicationController
     else
       render status: :unprocessable_entity
     end
+  end
+
+  def show
+    @article = Article.find(params[:id])
+
+    render json: @article
   end
 
   private

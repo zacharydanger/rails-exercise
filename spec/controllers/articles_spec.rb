@@ -124,7 +124,7 @@ describe 'News API', type: :request do
     end
   end
 
-  xdescribe 'GET /articles/:id' do
+  describe 'GET /articles/:id' do
     context 'when article by given ID exists' do
       let(:article_params) do
         {
