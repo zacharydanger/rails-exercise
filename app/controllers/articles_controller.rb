@@ -1,6 +1,12 @@
 class ArticlesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :error_404
 
+  def index
+    @articles = Article.all.order("published_at desc")
+
+    render json: @articles
+  end
+
   def create
     @article = Article.new(article_params)
 
@@ -15,6 +21,14 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     render json: @article
+  end
+
+  def destroy
+    method_not_allowed
+  end
+
+  def update
+    method_not_allowed
   end
 
   private
