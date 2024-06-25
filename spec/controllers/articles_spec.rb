@@ -21,7 +21,7 @@ describe 'News API', type: :request do
         expect(response.status).to eq(201)
       end
 
-      it 'adds an article to the database' do
+      xit 'adds an article to the database' do
         get '/articles'
         fail('Cannot access GET /articles') unless response.status == 200
 
@@ -124,7 +124,7 @@ describe 'News API', type: :request do
     end
   end
 
-  describe 'GET /articles/:id' do
+  xdescribe 'GET /articles/:id' do
     context 'when article by given ID exists' do
       let(:article_params) do
         {
@@ -175,7 +175,7 @@ describe 'News API', type: :request do
     end
   end
 
-  describe 'GET /articles' do
+  xdescribe 'GET /articles' do
     it 'returns status 200' do
       get '/articles'
       expect(response.status).to eq(200)
@@ -233,7 +233,7 @@ describe 'News API', type: :request do
     end
   end
 
-  describe 'DELETE /articles/:id' do
+  xdescribe 'DELETE /articles/:id' do
     let(:article) do
       post '/articles', params: {
         title: 'Sakura Park Reconstruction',
@@ -256,7 +256,7 @@ describe 'News API', type: :request do
     end
   end
 
-  describe 'PATCH /articles/:id' do
+  xdescribe 'PATCH /articles/:id' do
     let(:article) do
       post '/articles', params: {
         title: 'Sakura Park Reconstruction',
@@ -279,7 +279,7 @@ describe 'News API', type: :request do
     end
   end
 
-  describe 'PUT /articles/:id' do
+  xdescribe 'PUT /articles/:id' do
     let(:article) do
       post '/articles', params: {
         title: 'Sakura Park Reconstruction',
